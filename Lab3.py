@@ -6,11 +6,20 @@ SORT_DESCENDING = 1
 
 def bubble_sort(arr, sorting_order):
 
+    print("Bubble sort called with array:", arr, "and sorting order:", sorting_order)
+
     # Copy input list to results list
     arr_result = arr.copy()
 
+    for item in arr_result:
+        if type(item) != int:
+            return 2
+
     # Get number of elements in the list
     n = len(arr_result)
+
+    if n == 0:
+        return 0
 
     if n < 10:
         # Traverse through all array elements
@@ -35,6 +44,7 @@ def bubble_sort(arr, sorting_order):
                     arr_result = []
     else:
         arr_result = -1
+        return 1
 
     return arr_result
 
